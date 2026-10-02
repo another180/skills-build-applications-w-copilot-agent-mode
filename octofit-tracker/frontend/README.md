@@ -1,4 +1,18 @@
-# React + Vite
+# Octofit Tracker Frontend
+
+## API configuration
+
+The frontend uses `VITE_CODESPACE_NAME` to call the API on port `8000` from a GitHub Codespace. Define it in `octofit-tracker/frontend/.env.local` using the Codespace name (not a URL):
+
+```env
+VITE_CODESPACE_NAME=your-codespace-name
+```
+
+Vite exposes `VITE_` variables to browser code, so this value is not secret. Restart the Vite dev server after changing `.env.local`. When the variable is unset, the frontend uses `http://localhost:8000` for local development.
+
+The app loads activities, leaderboard entries, teams, users, and workouts from their corresponding `/api/.../` endpoints and accepts both array responses and paginated responses with `results` or `data` fields.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
